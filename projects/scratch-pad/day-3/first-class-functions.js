@@ -100,24 +100,12 @@ function modifyStrings(strings, modify) {
     //
     // SECOND ATTEMPT //
         // YOUR CODE BELOW HERE //
-    // var newString = [];
-    for (var i = 0; i < 1; i++){
-        // newString.push(strings)
-    }
-    var upperCased = strings.toUpperCase()
-    var lowerCased = strings.toLowerCase()
-  
-    function modify(strings){
-        for (var i = 0; i <= strings.length; i++){
-            if (upperCased === strings){
-                return lowerCased
-            } else {
-                return upperCased
-            }
+        var newString = [];
+        for (var i = 0; i < strings.length; i++){
+            newString.push(modify(strings[i]))
         }
-    }
+      return newString
   console.log(modify(strings))
-    // YOUR CODE ABOVE HERE //
     // YOUR CODE ABOVE HERE //
 }
 
@@ -133,10 +121,13 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    var string = '';
-    return function (string){
-        return string[0].toUpperCase() === startsWith[0].toUpperCase()
-    }
+        var result = true
+        for (var i = 0; i < strings.length; i++){
+           if (test(strings[i]) === false){
+                result = false 
+           }
+        }
+        return result
     
     // YOUR CODE ABOVE HERE //
 }
